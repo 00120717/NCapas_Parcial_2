@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	
+<button type="button" th:onclick="|window.location.href='/categoria'|">Ingresar Categoria</button><br>
+<button type="button" th:onclick="|window.location.href='/libro'|">Ingresar Libro</button><br>
+<button type="button" th:onclick="|window.location.href='/listaLibros'|">Ver Libros</button><br>
+<p th:if="${exito == 1}" class="mb-0">Categoria guardada con &eacute;xito</p><br/>
+<p th:if="${exito == 2}" class="mb-0">Libro guardado con &eacute;xito</p><br/>
+<br><br>
+	
+</body>
+</html>
