@@ -6,7 +6,7 @@
 </head>
 <body>
 	
-	<form action="@{libros}" th:object="${libro}" method="post">
+	<form action="@{insertarlibro}" th:object="${libro}" method="post">
 	
 		<label>Titulo</label>
 		<input type="text" th:field="*{stitulo}">
@@ -26,7 +26,7 @@
                 th:value="${categoria.ccategoria}"
                 th:text="${categoria.scategoria}"></option>
     	</select>
-    	<span th:errors="*{cimportancia}" style="color:#FF0000"></span>
+    	<span th:errors="*{ccategoria}" style="color:#FF0000"></span>
 		
 		<label>Estado </label>
 		<input type="radio"

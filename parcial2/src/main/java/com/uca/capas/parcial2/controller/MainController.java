@@ -28,14 +28,14 @@ public class MainController {
 	@Autowired
 	CategoriaService categoriaService;
 	
-	@RequestMapping("index")
+	@RequestMapping("/index")
 	public ModelAndView inicio() {
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("index");
 		return mav;
 	}
 	
-	@RequestMapping("categoria")
+	@RequestMapping("/categoria")
 	public ModelAndView saveCategorias(@Valid @ModelAttribute Categoria categoria, BindingResult result) throws DataAccessException{
 		ModelAndView mav = new ModelAndView();
 		
@@ -52,11 +52,11 @@ public class MainController {
 		return mav;		
 	}
 	
-	@RequestMapping("libros")
+	@RequestMapping("/libro")
 	public ModelAndView saveLibros(@Valid @ModelAttribute Libro libro, BindingResult result) throws DataAccessException{
 		ModelAndView mav = new ModelAndView();
 		 List<Categoria> categorias= null;
-		 
+		 categorias = categoriaService.findAll();
 		 mav.addObject("categorias", categorias);
 			
 		 	long millis=System.currentTimeMillis();  

@@ -36,7 +36,7 @@ public class Libro {
 	@Column(name="s_autor")
 	@Size(message = "El campo sobrepasa la cantidad de 150 caracteres",max = 150)
 	@NotNull(message = "El campo Autor categoría no puede estar vacío")
-	private Integer sautor;
+	private String sautor;
 	
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "c_categoria",unique = true, insertable = false, updatable = false)
@@ -73,11 +73,11 @@ public class Libro {
 		this.stitulo = stitulo;
 	}
 
-	public Integer getSautor() {
+	public String getSautor() {
 		return sautor;
 	}
 
-	public void setSautor(Integer sautor) {
+	public void setSautor(String sautor) {
 		this.sautor = sautor;
 	}
 
